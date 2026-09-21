@@ -23,10 +23,8 @@ def compute_revenue(rows: list[dict]) -> float:
 
 # Уровень 3
 def top_item(rows: list[dict]) -> Optional[dict]:
-    if not rows:
-        return None
-
     return max(
         rows,
-        key=lambda row: int(row["quantity"]) * float(row["price"])
+        key=lambda row: int(row["quantity"]) * float(row["price"]),
+        default=None
     )
